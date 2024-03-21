@@ -1,2 +1,13 @@
 @use './partials/general';
 @use './partials/variables';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo {
+    width: 15%;
+    height: 15%;
+}
