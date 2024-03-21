@@ -5,9 +5,15 @@ export default {
 </script>
 
 <template>
-    <div>
-        <h1>Main</h1>
-    </div>
+    <main>
+        <div>
+            <h1>Main</h1>
+        </div>
+    </main>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+main {
+    height: 400px;
+}
+</style>

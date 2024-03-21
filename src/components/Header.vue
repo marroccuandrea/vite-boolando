@@ -32,6 +32,7 @@ export default {
 header {
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 70px;
     background-color: $orange-h;
     color: $bianco;
@@ -39,11 +40,10 @@ header {
 }
 
 .banner {
-    max-width: 1200px;
+    width: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 auto;
 }
 
 ul {
