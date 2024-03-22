@@ -25,8 +25,8 @@ export default {
             <div class="brand">{{ vestito.brand }}</div>
             <div class="product-name">{{ vestito.name }}</div>
             <div class="price">
-                <span>14,99 &euro;</span>
-                <del>{{ vestito.price }}</del>
+                <span>{{ vestito.price }}&#8364</span>
+                <!-- <del>{{ vestito.price }}</del> -->
             </div>
         </div>
     </div>
