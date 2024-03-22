@@ -1,19 +1,32 @@
 <script>
+import ProductCard from './partials/ProductCard.vue';
 export default {
-
+    components: {
+        ProductCard
+    }
 }
 </script>
 
 <template>
     <main>
-        <div>
-            <h1>Main</h1>
+        <div class="container">
+            <ProductCard />
+
         </div>
     </main>
 </template>
 
 <style lang="scss" scoped>
 main {
-    height: 400px;
+    padding: 30px 0;
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+
+
+    }
 }
 </style>
