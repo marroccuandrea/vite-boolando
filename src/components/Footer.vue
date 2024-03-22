@@ -1,6 +1,11 @@
 <script>
+import { footerMenues } from '../data/menues'
 export default {
-
+    computed: {
+        socialMenu() {
+            return footerMenues.social
+        }
+    }
 }
 </script>
 
@@ -11,6 +16,7 @@ export default {
                 <h4>Boolando s.r.l.</h4>
                 <nav>
                     <ul>
+                        <!-- Da fare dinamica -->
                         <li><a href=""></a>Informazioni legali</li>
                         <li><a href=""></a>Informativa sulla privacy</li>
                         <li><a href=""></a>Diritto di recesso</li>
@@ -21,11 +27,9 @@ export default {
                 <h5>Trovaci anche su</h5>
                 <nav>
                     <ul>
-                        <li><i class="fa-brands fa-square-x-twitter"></i></li>
-                        <li><i class="fa-brands fa-square-facebook"></i></li>
-                        <li><i class="fa-brands fa-instagram"></i></li>
-                        <li><i class="fa-brands fa-pinterest"></i></li>
-                        <li><i class="fa-brands fa-youtube"></i></li>
+                        <li v-for="(item, index) in socialMenu" :key="`s-${index}`"><a :href="item.href"
+                                v-html="`${item.text}`"></a></li>
+
                     </ul>
                 </nav>
             </div>
@@ -71,8 +75,13 @@ ul {
         padding-right: 10px;
         font-size: 0.8rem;
 
+        a {
+            color: $bianco;
+        }
+
         i {
             font-size: 1rem;
+
         }
     }
 }
