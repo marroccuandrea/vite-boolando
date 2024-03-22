@@ -3,12 +3,14 @@
 import Header from './components/Header.vue';
 import Main from './components/Main.vue';
 import Footer from './components/Footer.vue';
+import products from './data/db.json';
 
 export default {
   components: {
     Header,
     Main,
-    Footer
+    Footer,
+    products
   }
 }
 </script>

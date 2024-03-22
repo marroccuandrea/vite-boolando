@@ -1,6 +1,15 @@
 <script>
-export default {
+import { headerMenues } from '../data/menues'
 
+export default {
+    computed: {
+        mainMenu() {
+            return headerMenues.main
+        },
+        socialMenu() {
+            return headerMenues.social
+        }
+    }
 }
 </script>
 
@@ -9,17 +18,18 @@ export default {
         <div class="banner">
             <div>
                 <ul>
-                    <li><a href="#">Donna</a></li>
-                    <li><a href="#">Uomo</a></li>
-                    <li><a href="#">Bambino</a></li>
+                    <li v-for="(item, index) in mainMenu" :key="`m-${index}`"><a :href="item.href">{{ item.text }}</a>
+                    </li>
+
                 </ul>
             </div>
             <img class="logo" src="../assets/scss/img/boolean-logo.png" alt="">
             <div>
                 <ul>
-                    <li><i class="fa-regular fa-user"></i></li>
-                    <li><i class="fa-regular fa-heart"></i></li>
-                    <li><i class="fa-solid fa-bag-shopping"></i></li>
+                    <li v-for="(item, index) in socialMenu" :key="`s-${index}`"><a :href="item.href"
+                            v-html="`${item.text}`"></a>
+                    </li>
+
                 </ul>
             </div>
         </div>
