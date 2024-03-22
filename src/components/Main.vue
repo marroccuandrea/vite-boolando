@@ -1,6 +1,12 @@
 <script>
 import ProductCard from './partials/ProductCard.vue';
+import { products } from '../data/db.json';
 export default {
+    data() {
+        return {
+            products
+        }
+    },
     components: {
         ProductCard
     }
@@ -10,7 +16,7 @@ export default {
 <template>
     <main>
         <div class="container">
-            <ProductCard />
+            <ProductCard v-for="product in this.products" :key="product.id" :vestito="product" />
 
         </div>
     </main>

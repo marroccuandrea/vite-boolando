@@ -1,142 +1,36 @@
 <script>
 export default {
-
+    props: {
+        vestito: Object,
+    }
 }
 </script>
 
 <template>
     <div class="card">
         <div class="card-images">
-            <img src="../../data/1.webp" alt="1">
-            <img class="secondary-image" src="../../data/1b.webp" alt="1">
+            <img :src="`/img/${vestito.frontImage}`" alt="1">
+            <img class="secondary-image" :src="`/img/${vestito.backImage}`" alt="1">
             <div class="favourite">
                 <i class="fa-solid fa-heart"></i>
             </div>
             <div class="badges">
-                <span class="badge discount">-50%</span>
-                <span class="badge tag">sostenibilità</span>
+                <span v-for="discount in  vestito.badges " :key=discount :class="discount.type"
+                    class="badge discount">{{ discount.value }}</span>
+                <!-- <span class="badge tag">sostenibilità</span> -->
             </div>
         </div>
 
         <div class="card-text">
-            <div class="brand">Levi's</div>
-            <div class="product-name">RELAXED fit tee UNISEX</div>
+            <div class="brand">{{ vestito.brand }}</div>
+            <div class="product-name">{{ vestito.name }}</div>
             <div class="price">
                 <span>14,99 &euro;</span>
-                <del>29,99 &euro;</del>
+                <del>{{ vestito.price }}</del>
             </div>
         </div>
     </div>
-    <div class="card">
-        <div class="card-images">
-            <img src="../../data/2.webp" alt="2">
-            <img class="secondary-image" src="../../data/2b.webp" alt="2">
-            <div class="favourite">
-                <i class="fa-solid fa-heart"></i>
-            </div>
-            <div class="badges">
-                <span class="badge discount">-50%</span>
-                <span class="badge tag">sostenibilità</span>
-            </div>
-        </div>
 
-        <div class="card-text">
-            <div class="brand">Levi's</div>
-            <div class="product-name">RELAXED fit tee UNISEX</div>
-            <div class="price">
-                <span>14,99 &euro;</span>
-                <del>29,99 &euro;</del>
-            </div>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-images">
-            <img src="../../data/3.webp" alt="3">
-            <img class="secondary-image" src="../../data/3b.webp" alt="3">
-            <div class="favourite">
-                <i class="fa-solid fa-heart"></i>
-            </div>
-            <div class="badges">
-                <span class="badge discount">-50%</span>
-                <span class="badge tag">sostenibilità</span>
-            </div>
-        </div>
-
-        <div class="card-text">
-            <div class="brand">Levi's</div>
-            <div class="product-name">RELAXED fit tee UNISEX</div>
-            <div class="price">
-                <span>14,99 &euro;</span>
-                <del>29,99 &euro;</del>
-            </div>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-images">
-            <img src="../../data/4.webp" alt="4">
-            <img class="secondary-image" src="../../data/4b.webp" alt="4">
-            <div class="favourite">
-                <i class="fa-solid fa-heart"></i>
-            </div>
-            <div class="badges">
-                <span class="badge discount">-50%</span>
-                <span class="badge tag">sostenibilità</span>
-            </div>
-        </div>
-
-        <div class="card-text">
-            <div class="brand">Levi's</div>
-            <div class="product-name">RELAXED fit tee UNISEX</div>
-            <div class="price">
-                <span>14,99 &euro;</span>
-                <del>29,99 &euro;</del>
-            </div>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-images">
-            <img src="../../data/5.webp" alt="5">
-            <img class="secondary-image" src="../../data/5b.webp" alt="5">
-            <div class="favourite">
-                <i class="fa-solid fa-heart"></i>
-            </div>
-            <div class="badges">
-                <span class="badge discount">-50%</span>
-                <span class="badge tag">sostenibilità</span>
-            </div>
-        </div>
-
-        <div class="card-text">
-            <div class="brand">Levi's</div>
-            <div class="product-name">RELAXED fit tee UNISEX</div>
-            <div class="price">
-                <span>14,99 &euro;</span>
-                <del>29,99 &euro;</del>
-            </div>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-images">
-            <img src="../../data/6.webp" alt="6">
-            <img class="secondary-image" src="../../data/6b.webp" alt="6">
-            <div class="favourite">
-                <i class="fa-solid fa-heart"></i>
-            </div>
-            <div class="badges">
-                <span class="badge discount">-50%</span>
-                <span class="badge tag">sostenibilità</span>
-            </div>
-        </div>
-
-        <div class="card-text">
-            <div class="brand">Levi's</div>
-            <div class="product-name">RELAXED fit tee UNISEX</div>
-            <div class="price">
-                <span>14,99 &euro;</span>
-                <del>29,99 &euro;</del>
-            </div>
-        </div>
-    </div>
 </template>
 
 
@@ -186,6 +80,7 @@ img {
         font-size: .9rem;
 
         span {
+            padding-right: 5px;
             color: red;
             font-weight: 700;
         }
