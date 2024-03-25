@@ -51,6 +51,20 @@ const footerMenues = {
             text: '<i class="fa-brands fa-youtube"></i>',
             href: '#'
         }
+    ],
+    main: [
+        {
+            text: 'Informazioni legali',
+            href: '#'
+        },
+        {
+            text: 'Informativa sulla privacy',
+            href: '#'
+        },
+        {
+            text: 'Diritto di recesso',
+            href: '#'
+        }
     ]
 }
 

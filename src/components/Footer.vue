@@ -4,6 +4,9 @@ export default {
     computed: {
         socialMenu() {
             return footerMenues.social
+        },
+        mainMenu() {
+            return footerMenues.main
         }
     }
 }
@@ -16,10 +19,8 @@ export default {
                 <h4>Boolando s.r.l.</h4>
                 <nav>
                     <ul>
-                        <!-- Da fare dinamica -->
-                        <li><a href=""></a>Informazioni legali</li>
-                        <li><a href=""></a>Informativa sulla privacy</li>
-                        <li><a href=""></a>Diritto di recesso</li>
+                        <li v-for="(item, index) in mainMenu" :key="`m-${index}`"><a :href="item.href">{{ item.text
+                                }}</a></li>
                     </ul>
                 </nav>
             </div>
@@ -77,6 +78,7 @@ ul {
 
         a {
             color: $bianco;
+            text-decoration: none;
         }
 
         i {
